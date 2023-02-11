@@ -1,6 +1,8 @@
 name: Scrape latest data
 
 on:
+  pull_request:
+    branches: [ main ]
   push:
   workflow_dispatch:
   schedule:
