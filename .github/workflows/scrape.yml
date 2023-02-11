@@ -19,6 +19,7 @@ jobs:
       - name: Fetch latest data
         run: |-
           curl http://halfwaycoffee.com/map_data.php | jq . > cafes.json
+      - name: Convert cafes.json to GPX
         run: |-
           ./convert-data-to-gpx.sh cafes.json > halfway-coffee.gpx
       - name: Commit and push if it changed
