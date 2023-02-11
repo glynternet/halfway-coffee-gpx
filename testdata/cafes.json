@@ -1,0 +1,24 @@
+[
+  {
+    "id": "252",
+    "title": "Bar",
+    "times": "",
+    "address": "Station Road",
+    "website": "http://www.1923.coffee/",
+    "info": "Great coffee, delicious food and snacks, very reasonable prices. Railings outside to lock a bike to, covered by the station's CCTV, and stone floors inside so they don't mind cleats. Sofas are VERY comfortable - beware that you might not want to leave again!!",
+    "latitude": "3",
+    "longitude": "4",
+    "placeId": "ChIJLeoixzmqe0gRMvCdwXCTHHQ"
+  },
+  {
+    "id": "514",
+    "title": "Foo",
+    "times": "",
+    "address": "1 Bridge St, Framlingham, Woodbridge IP13 9DR, UK",
+    "website": "http://2twenty1b.co.uk/",
+    "info": "",
+    "latitude": "1",
+    "longitude": "2",
+    "placeId": "ChIJ3dHBdEqQ2UcRcuCI36Pg8kc"
+  }
+]

@@ -1,27 +1,27 @@
 name: Scrape latest data
 
 on:
-  pull_request:
-    branches: [ main ]
   push:
   workflow_dispatch:
   schedule:
-    - cron:  '33 */12 * * *'
+    - cron: '33 */12 * * *'
 
 jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out this repo
-      uses: actions/checkout@v2
-    - name: Fetch latest data
-      run: |-
-        curl http://halfwaycoffee.com/map_data.php | jq . > cafes.json
-    - name: Commit and push if it changed
-      run: |-
-        git config user.name "Automated"
-        git config user.email "actions@users.noreply.github.com"
-        git add -A
-        timestamp=$(date -u)
-        git commit -m "Latest data: ${timestamp}" || exit 0
-        git push
+      - name: Check out this repo
+        uses: actions/checkout@v2
+      - name: Fetch latest data
+        run: |-
+          curl http://halfwaycoffee.com/map_data.php | jq . > cafes.json
+        run: |-
+          ./convert-data-to-gpx.sh cafes.json > halfway-coffee.gpx
+      - name: Commit and push if it changed
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "Latest data: ${timestamp}" || exit 0
+          git push

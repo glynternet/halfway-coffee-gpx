@@ -1,0 +1,14 @@
+name: Test conversion
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v2
+      - name:
+        run: diff <(./convert-data-to-gpx.sh ./testdata/cafes.json) ./testdata/expected.gpx
