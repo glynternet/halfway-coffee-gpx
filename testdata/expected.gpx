@@ -10,7 +10,7 @@
   </metadata>
 
   <wpt lat="3" lon="4">
-    <name>Bar</name>
+    <name>Bar &amp; Baz</name>
     <sym>Flag, Blue</sym>
     <type>user</type>
   </wpt>
